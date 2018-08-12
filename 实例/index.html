@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .bigbox{
+      margin: 0 auto;
+    }
+    .bigbox li{
+      float: left;
+      height: 124px;
+      width: 200px;
+      border:1px solid #ccc;
+      list-style: none;
+    }
+    .bigbox li.active{
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .bigbox li+li{
+      margin-right:2px; 
+    }
+    .box {
+      position: relative;
+    }
+    .box img{
+      height: 504px;
+      position: absolute;
+      top: 130px;
+      left: 38px;
+      border:4px solid pink;
+      display: none;
+    }
+    .box img.active{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="bigbox">
+    <ul>
+      <li class="active"><img src="images/1-small.jpg"></li>
+      <li><img src="images/2-small.jpg"></li>
+      <li><img src="images/3-small.jpg"></li>    
+      <li><img src="images/4-small.jpg"></li>    
+    </ul>
+    <div class="box">
+      <img src="images/1.jpg" alt="" class="active">
+      <img src="images/2.jpg" alt="">
+      <img src="images/3.jpg" alt="">
+      <img src="images/4.jpg" alt="">
+    </div>
+  </div>
+  <script src="../lib/jquery-1.12.4.js"></script>
+  <script src="../js/jquery.tab.js"></script>
+  <script>
+    var obj = {
+          controlButton : 'ul li',
+          event : 'mouseover',
+          controlClass : 'active',
+          objectContent : '.box img',
+          objectClass : 'active'
+      };
+    $.tab(obj)
+  
+  </script>
+</body>
+</html>
